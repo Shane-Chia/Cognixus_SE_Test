@@ -14,7 +14,7 @@ public class UserController {
     private final AtomicLong counter = new AtomicLong();
 
 	@GetMapping("/signin")
-	public User greeting(@RequestParam(value = "name", defaultValue = "Anon") String name) {
+	public User user(@RequestParam(value = "name", defaultValue = "Anon") String name) {
 		return new User(counter.incrementAndGet(), name);
 	}
 }
