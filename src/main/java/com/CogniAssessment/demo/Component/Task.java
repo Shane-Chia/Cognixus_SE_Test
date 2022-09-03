@@ -3,13 +3,13 @@ package com.CogniAssessment.demo.Component;
 public class Task {
     private int id;
     private String name;
-    private String description;
+    private String desc;
     private String status;
 
     public Task(int id, String name, String desc, String status){
         this.id = id;
         this.name = name;
-        this.description = desc;
+        this.desc = desc;
         this.status = status;
     }
 
@@ -24,7 +24,7 @@ public class Task {
         return name;
     }
     public String getDesc(){
-        return description;
+        return desc;
     }
     public String getStatus(){
         return status;

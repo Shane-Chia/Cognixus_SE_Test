@@ -2,24 +2,37 @@ package com.CogniAssessment.demo;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicLong;
 
 import com.CogniAssessment.demo.Component.Task;
+import com.CogniAssessment.demo.Component.User;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
 
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class ToDoDatabase {
+public class ClientSide {
     private List<Task> Database = new ArrayList<>();
-    private int counter = 1;
+    private int taskCounter = 1;
+
+    private final AtomicLong userCounter = new AtomicLong();
+
+	@GetMapping("/signin")
+	public User user(@RequestParam(value = "name", defaultValue = "Anon") String name) {
+		return new User(userCounter.incrementAndGet(), name);
+	}
 
     @RequestMapping("/add/{name}/{desc}/{status}")
     public String addTask(@PathVariable String name, @PathVariable String desc, 
                           @PathVariable String status){
-        Task createdTask = new Task(counter,name,desc,status);
+        Task createdTask = new Task(taskCounter,name,desc,status);
         Database.add(createdTask);
-        counter++;
+        taskCounter++;
         return "Request Complete: New Task has been Added";
     }
 
