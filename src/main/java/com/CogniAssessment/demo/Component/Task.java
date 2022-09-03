@@ -13,6 +13,10 @@ public class Task {
         this.status = status;
     }
 
+    public void editStatus(String edit){
+        this.status = edit;
+    }
+
     public int getId(){
         return id;
     }
