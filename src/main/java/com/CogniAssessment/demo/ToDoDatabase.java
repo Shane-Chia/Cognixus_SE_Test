@@ -25,7 +25,7 @@ public class ToDoDatabase {
     }
 
     @RequestMapping("/remove/{id}")
-    public List<Task> addTask(@PathVariable int id){
+    public List<Task> removeTask(@PathVariable int id){
         for(Task task : Database){
             if(task.getId()== id){
                 Database.remove(task);
