@@ -44,16 +44,16 @@ Documentation
 -Add a task 
    http://localhost:8080/add/name/desc/status
    
-  -name = What you would like to name the new task
+            -name = What you would like to name the new task
   
-  -desc = A description of what is the new task
+            -desc = A description of what is the new task
   
-  -status = Whether the task is complete or not (You can write anything here to describe if it is half done or pending, etc)
+            -status = Whether the task is complete or not (You can write anything here to describe if it is half done or pending, etc)
 
 -Remove a task 
    http://localhost:8080/remove/id
    
-  -id = Which task in the list you want to delete
+            -id = Which task in the list you want to delete
 
 -Display a task 
    http://localhost:8080/display
@@ -61,6 +61,6 @@ Documentation
 -Edit a task 
    http://localhost:8080/edit/id/status
    
-  -id = Which task in the list you want to edit
+            -id = Which task in the list you want to edit
   
-  -status = Whether the task is complete or not (You can write anything here to describe if it is half done or pending, etc)
+            -status = Whether the task is complete or not (You can write anything here to describe if it is half done or pending, etc)
